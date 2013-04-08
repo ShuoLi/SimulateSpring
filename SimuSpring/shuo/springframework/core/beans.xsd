@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://phz50.javaeye.com/beans"
+	xmlns:tns="http://phz50.javaeye.com/beans" elementFormDefault="qualified">
+
+	<element name="beans">
+		<complexType>
+			<sequence>
+				<element name="bean" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="property" minOccurs="0" maxOccurs="unbounded">
+								<complexType>
+									<sequence>
+										<element name="list" minOccurs="0" maxOccurs="1">
+											<complexType>
+												<sequence>
+													<element name="value" minOccurs="0" maxOccurs="unbounded" />
+													<element name="ref" minOccurs="0" maxOccurs="1">
+														<complexType>
+															<attribute name="bean" />
+														</complexType>
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+										<element name="map" minOccurs="0" maxOccurs="1">
+											<complexType>
+												<sequence>
+													<element name="entry" minOccurs="0" maxOccurs="unbounded">
+														<complexType>
+															<sequence>
+																<element name="value" minOccurs="0" maxOccurs="1"></element>
+																<element name="ref" minOccurs="0" maxOccurs="1">
+																	<complexType>
+																		<attribute name="bean" />
+																	</complexType>
+																</element>
+															</sequence>
+															<attribute name="key" />
+														</complexType>
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+									<attribute name="name" use="required"/>
+									<attribute name="value" />
+									<attribute name="ref" />
+								</complexType>
+							</element>
+						</sequence>
+						<attribute name="id" />
+						<attribute name="class" />
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

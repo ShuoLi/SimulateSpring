@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://phz50.javaeye.com/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://phz50.javaeye.com/beans phz/springframework/core/beans.xsd ">
+
+	<bean id="animal" class="phz.springframework.test.Cat">
+		<property name="name" value="kitty" />
+	</bean>
+	<bean id="animalSay" class="phz.springframework.test.AnimalSay">
+		<property name="animal" ref="animal" />
+	</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
